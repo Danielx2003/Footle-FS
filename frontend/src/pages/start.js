@@ -1,13 +1,11 @@
 import React from "react";
-import Dropdown from "../components/dropdown.js"
+import Search from "../components/search.js"
 
 const Start = () => {
     return (
-        <div className="home">
-            <h2>Home</h2>
-            <Dropdown/>
+        <div className="container">
+            <Search />
         </div>
     )
 }
-
 export default Start

@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 800;
+}
+
+header {
+    font: sans-serif;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    height: 5rem;
+    border-bottom: 1px solid rgb(189, 189, 189);
+    font-size: 1.3rem;
+}
+
+.element {
+    display: block;
+    background-color:green;
+}

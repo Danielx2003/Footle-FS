@@ -1,0 +1,4 @@
+once the user clicks on the player block, it should :
+ - clear the search box
+ - add the player to their guess list
+ - display the player guessed onm the screen
