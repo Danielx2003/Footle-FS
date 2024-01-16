@@ -3,31 +3,31 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const playerSchema = new Schema({
-    name : {
-        type : String,
+    name: {
+        type: String,
         required: true
     },
-    age : {
+    age: {
         type: String
     },
-    height : {
+    height: {
         type: String
     },
-    country : {
+    country: {
         type: String
     },
-    pos : {
+    pos: {
         type: String
     },
     foot: {
         type: String
     },
-    club : {
+    club: {
         type: String
     },
     photo: {
         type: String
     }
-})
+}, { collection: 'players' })
 
 module.exports = mongoose.model('Player', playerSchema)
