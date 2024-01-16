@@ -6,9 +6,7 @@ const {
     getSinglePlayer
 } = require('../controllers/playerController')
 
-
-
-router.get('/:name', getPlayers)
+router.get('/search/:name', getPlayers)
 router.get('/random', getRandomPlayer)
 router.get('/:id', getSinglePlayer)
 
