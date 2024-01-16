@@ -3,7 +3,8 @@ const mongoose = require('mongoose')
 
 const getPlayers = async (req, res) => {
     const { name } = req.params
-    const players = await Player.find({ name: name })
+    console.log(name)
+    const players = await Player.find({ name: new RegExp(name, 'i') })
     res.status(200).json(players)
 }
 
