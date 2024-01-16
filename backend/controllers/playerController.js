@@ -1,8 +1,9 @@
 const Player = require('../models/playerModel')
 const mongoose = require('mongoose')
 
-const getAllPlayers = async (req, res) => {
-    const players = await Player.find({})
+const getPlayers = async (req, res) => {
+    const { name } = req.params
+    const players = await Player.find({ name: name })
     res.status(200).json(players)
 }
 
@@ -25,7 +26,7 @@ const getSinglePlayer = async (req, res) => {
 }
 
 module.exports = {
-    getAllPlayers,
+    getPlayers,
     getRandomPlayer,
     getSinglePlayer
 }

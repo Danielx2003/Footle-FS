@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router()
 const {
-    getAllPlayers,
+    getPlayers,
     getRandomPlayer,
     getSinglePlayer
 } = require('../controllers/playerController')
 
 
 
-router.get('/', getAllPlayers)
+router.get('/:name', getPlayers)
 router.get('/random', getRandomPlayer)
 router.get('/:id', getSinglePlayer)
 
