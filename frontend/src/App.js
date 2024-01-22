@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Start from "./pages/start.js"
-import Nav from "./components/nav.js"
+import Start from "./pages/Start.jsx"
+import Header from "./components/Header.jsx"
 
 function App() {
     return (
         <div className="app">
-            <Nav />
+            <Header />
             <BrowserRouter>
-                <div className="pages">
+                <div className="container">
                     <Routes>
                         <Route
                             path="/"
