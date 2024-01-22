@@ -9,8 +9,6 @@ const Start = () => {
     const [hiddenPlayer, setHiddenPlayer] = useState({})
     const [guesses, setGuesses] = useState([])
 
-    console.log(guesses, "is the players guess")
-
     useEffect(() => {
         const fetchPlayers = async () => {
             const response = await fetch(`http://localhost:4000/api/players/random`)
@@ -26,7 +24,7 @@ const Start = () => {
         <GuesesContext.Provider value={[guesses, setGuesses]}>
             <Dropdown />
             <HiddenPlayerContext.Provider value={hiddenPlayer}>
-                {guesses.reverse().map((player) => <Player key={player._id} item={player} />)}
+                {guesses.map((player) => <Player key={player._id} item={player} />)}
             </HiddenPlayerContext.Provider>
         </GuesesContext.Provider>
 

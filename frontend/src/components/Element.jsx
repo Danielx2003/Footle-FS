@@ -4,22 +4,18 @@ import { GuesesContext } from "../pages/Start.jsx"
 export default function Element(props) {
     const [guesses, setGuesses] = useContext(GuesesContext)
     function handleClick(e) {
-        console.log("-------")
-        console.log(guesses, "is guesses")
-        console.log(props.player)
-        console.log("-------")
-        for (let i = 0; i < guesses.length; i++) {
-            if (guesses[i] === props.player) {
-                console.log("already in list")
-            } else {
-                console.log(props.player, "is not equal to", guesses[i])
-            }
+        let repeat = false;
+        for (let i=0; i<guesses.length; i++) {
+            if (props.player._id === guesses[i]._id) {
+                repeat = true;
+            } 
+
         }
 
-        if (guesses.includes(props.player)) {
+        if (repeat) {
             console.log("already guessed")
         } else {
-            setGuesses(prevArr => [...prevArr, props.player])
+            setGuesses(prevArr => [props.player, ...prevArr])
         }
         props.setRequestResult([])
         props.setInput("")
