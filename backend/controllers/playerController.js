@@ -1,8 +1,9 @@
 const Player = require('../models/playerModel')
 const mongoose = require('mongoose')
 
-const getAllPlayers = async (req, res) => {
-    const players = await Player.find({})
+const getPlayers = async (req, res) => {
+    const { name } = req.params
+    const players = await Player.find({ name: new RegExp(name, 'i') })
     res.status(200).json(players)
 }
 
@@ -14,7 +15,7 @@ const getRandomPlayer = async (req, res) => {
 const getSinglePlayer = async (req, res) => {
     const { id } = req.params
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({ error: 'No such player' })
+        return res.status(404).json({ error: 'Invalid id' })
     }
 
     const player = await Player.findById(id)
@@ -25,7 +26,7 @@ const getSinglePlayer = async (req, res) => {
 }
 
 module.exports = {
-    getAllPlayers,
+    getPlayers,
     getRandomPlayer,
     getSinglePlayer
 }

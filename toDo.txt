@@ -1,0 +1,1 @@
+handle the same player being guesed - game doesn't think they are the same when they are

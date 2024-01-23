@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: linear-gradient(137.28deg, #313333 -5.33%, #121212 33.62%);
+    background-attachment: fixed;
+    background-attachment: fixed;
+    height: 100vh;
+    font-family: 'Inter', 'san-serif';
+}
+
+header {
+    text-align: center;
+    align-items: center;
+    line-height: 80px;
+    box-shadow: 0 0 2px;
+    height: 80px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: white;
+}
+
+.dropdown {
+    width: 20%;
+    min-width: 200px; 
+    margin: 0;
+    z-index: 1;
+    display:flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.element {
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(230, 230, 230);
+    font-size: 1.4rem;
+    min-width: 200px;
+    max-width: 300px;
+    border-bottom: 1px solid black;
+}
+
+.element:hover {
+    cursor: pointer;
+    background-color: rgb(218, 218, 218);
+}
+
+.dropdown--input{
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    height: 35px;
+    padding-left: 1rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown--input:focus {
+    outline: none;
+}
+
+.container, main {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+}
+
+.player {
+    color: #FFFF;
+    margin: 0 auto;
+    margin-top: 1.1rem;
+    height: 300px;
+    width: 45%;
+    min-width: 340px;
+    max-width: 380px;
+    display:flex;
+    flex-direction: column;
+}
+
+.player--top {
+    margin-top: 5px;
+    margin-left: 10px;
+    display: flex;
+    width: 340px;
+    text-align: center;
+    align-items: center;
+    height: 90px;
+}
+.player--name {
+    font-weight: 500;
+    color: #FFFF;
+}
+
+.player--name-small {
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.player--img {  
+    margin-left: 10px;
+    margin-right: 20px;
+    border-radius: 100%;
+    width: 70px;
+}
+
+.player--bottom {
+    height: 150px;
+    width: 100%
+}
+
+.player--stats-top {
+    margin: 0 auto;
+    height: 60%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.player--stats-bottom {
+    margin: 0 auto;
+    height: 60%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.correct {
+    animation-duration: 250ms;
+    animation-delay: 0ms;
+    animation: flip-out 250ms;
+    text-align: center;
+    align-items: center;
+    line-height: 30px;
+    margin: 5px;
+    padding: 5px 5px 5px 5px;
+    height: 65px;
+    width: 115px;
+    border-radius: 10px;
+    background: linear-gradient(137.28deg, #72c97c -5.33%, #59AA61 33.62%);
+    font-size: 1.4rem;
+}
+
+.wrong {
+    text-align: center;
+    align-items: center;
+    line-height: 30px;
+    margin: 5px;
+    padding: 5px 5px 5px 5px;
+    height: 65px;
+    width:115px;
+    border-radius: 8px;
+    background: linear-gradient(137.28deg, #656868 -5.33%, #424242 33.62%);
+    box-shadow:  0px 1px 1px #424242;
+    font-size: 1.4rem;
+}
+
+.winner-sign {
+    width: 50%;
+    height: 40%;
+    background-color: rgb(99, 200, 99);
+    color: white;
+    margin-top: 20%;
+    box-shadow: 0 0 2px;
+    animation: wobble 3s ease;
+
+}
+
+.loser-sign {
+    width: 60%;
+    height: 70%;
+    background-color: rgb(196, 172, 172);
+    color: white;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 2px 5px 5px rgb(204, 183, 183);
+    left: 20%;
+    display: none;
+
+}
+
+.player--country {
+    width: 40%;
+}
+
+.player--club {
+    width: 30%;
+}
+
+.stat--title {
+    font-weight: 200;
+}
+
+.stat--stat {
+    font-weight: 400;
+    font-size: 1.7rem;
+}
+
+.counter {
+    margin-bottom: 10px;
+    color: #FFFF;
+}
+
+/* keyframes attempt */
+@keyframes flip-out {
+    10% {
+        -webkit-transform: rotateY(-90deg);
+        transform: rotateY(-90deg);
+        -moz-transform: rotateY(-90deg);
+        -o-transform: rotateY(-90deg);
+    }
+    100% {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+    }
+}
+@keyframes wobble {
+    0% { transform: translateX(0%); }
+    15% { transform: translateX(-25%) rotate(-5deg); }
+    30% { transform: translateX(20%) rotate(3deg); }
+    45% { transform: translateX(-15%) rotate(-3deg); }
+    60% { transform: translateX(10%) rotate(2deg); }
+    75% { transform: translateX(-5%) rotate(-1deg); }
+    100% { transform: translateX(0%); }
+}
+  

@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors')
 require('dotenv').config();
 const playerRoutes = require('./routes/players')
 
 const app = express();
 
 app.use(express.json())
+app.use(cors())
 app.use('/api/players', playerRoutes)
 
 mongoose.connect(process.env.URI)
